@@ -8,8 +8,11 @@ function Alert(props) {
   }
   //props.alert && ignores the alert value which is null
   return (
-     props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
+    <div style={{height:"50px"}}>
+
+     {props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
     <strong>{capitalize(props.alert.type)}</strong>: {props.alert.msg} 
+    </div>}
     </div>
   )
 }

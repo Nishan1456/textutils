@@ -123,18 +123,6 @@ export default function TextForm(props) {
         setText(e.target.value);
   }
 
-  //function to count the word length
- const wordCount=()=>
- {
-  if(text==="")
-  {
-    return 0;
-  }else
-  {
-  return text.split(" ").length;
-
-  } 
-}
 
 
 const [text,setText]=useState("");
@@ -144,27 +132,27 @@ return (
   <div className='container' style={{color:props.mode==="dark"?"white":"black"}}>
     <h1>{props.heading}</h1>
 <div className="mb-3">
-<textarea placeholder="enter text here....." className="form-control" value={text} style={{background:props.mode==="dark"?"grey":"white",color:props.mode==="dark"?"white":"black"}} onChange={handleOnChange} id="myBox" rows="8" ></textarea>
+<textarea placeholder="enter text here....." className="form-control" value={text} style={{background:props.mode==="dark"?"#042743":"white",color:props.mode==="dark"?"white":"black"}} onChange={handleOnChange} id="myBox" rows="8" ></textarea>
 </div>
 <button className="btn btn-primary " onClick={handleUpClick}>Convert to uppercase</button>
-<button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to lowercase</button>
-<button className="btn btn-primary mx-2" onClick={handleClear}>Clear</button>
-<button className="btn btn-primary mx-2" onClick={handleCopy}>Copy to Clipboard</button>
-<button className="btn btn-primary mx-2" onClick={handleRev}>Reverse Text</button>
-<button className="btn btn-primary mx-2" onClick={handleTit}>TitleCase</button>
-<button className="btn btn-primary mx-2" onClick={handleSpeak}>Speak</button>
+<button className="btn btn-primary mx-2 my-1" onClick={handleLoClick}>Convert to lowercase</button>
+<button className="btn btn-primary mx-2 my-1" onClick={handleClear}>Clear</button>
+<button className="btn btn-primary mx-2 my-1" onClick={handleCopy}>Copy to Clipboard</button>
+<button className="btn btn-primary mx-2 my-1" onClick={handleRev}>Reverse Text</button>
+<button className="btn btn-primary mx-2 my-1" onClick={handleTit}>TitleCase</button>
+<button className="btn btn-primary mx-2 " onClick={handleSpeak}>Speak</button>
 
 
   </div>
   <div className="container my-2">
   <button className="btn btn-primary " onClick={handleVoCount}>VowelCount</button>
-  <button className="btn btn-primary mx-2" onClick={handleCoCount}>ConsonantCount</button>
-  <button className="btn btn-primary mx-2" onClick={handleSpace}>Remove Whitespaces</button>
+  <button className="btn btn-primary mx-2 my-1" onClick={handleCoCount}>ConsonantCount</button>
+  <button className="btn btn-primary mx-2 my-1" onClick={handleSpace}>Remove Whitespaces</button>
 
   </div>
   <div className="container my-2" style={{color:props.mode==="dark"?"white":"black"}}>
     <h2>Your Text Summmary</h2>
-    <p>{wordCount()} words and {text.length} characters</p>
+    <p>{text.split(" ").filter((element)=>element.length!==0).length} words and {text.length} characters</p>
     <p>{text.length>0?(0.008 * text.split(" ").length).toPrecision(2):0} minutes to read</p>
     <h2>Preview</h2>
     <p>{text.length>0?text:"Type something to preview!!!"}</p>
