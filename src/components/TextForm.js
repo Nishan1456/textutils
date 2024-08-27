@@ -130,24 +130,24 @@ const [text,setText]=useState("");
 return (
   <>
   <div className='container' style={{color:props.mode==="dark"?"white":"black"}}>
-    <h1>{props.heading}</h1>
+    <h1 className='mb-4'>{props.heading}</h1>
 <div className="mb-3">
 <textarea placeholder="enter text here....." className="form-control" value={text} style={{background:props.mode==="dark"?"#042743":"white",color:props.mode==="dark"?"white":"black"}} onChange={handleOnChange} id="myBox" rows="8" ></textarea>
 </div>
-<button className="btn btn-primary " onClick={handleUpClick}>Convert to uppercase</button>
-<button className="btn btn-primary mx-2 my-1" onClick={handleLoClick}>Convert to lowercase</button>
-<button className="btn btn-primary mx-2 my-1" onClick={handleClear}>Clear</button>
-<button className="btn btn-primary mx-2 my-1" onClick={handleCopy}>Copy to Clipboard</button>
-<button className="btn btn-primary mx-2 my-1" onClick={handleRev}>Reverse Text</button>
-<button className="btn btn-primary mx-2 my-1" onClick={handleTit}>TitleCase</button>
-<button className="btn btn-primary mx-2 " onClick={handleSpeak}>Speak</button>
+<button disabled={text.length===0} className="btn btn-primary " onClick={handleUpClick}>Convert to uppercase</button>
+<button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleLoClick}>Convert to lowercase</button>
+<button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleClear}>Clear</button>
+<button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleCopy}>Copy to Clipboard</button>
+<button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleRev}>Reverse Text</button>
+<button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleTit}>TitleCase</button>
+<button disabled={text.length===0}  className="btn btn-primary mx-2 " onClick={handleSpeak}>Speak</button>
 
 
   </div>
-  <div className="container my-2">
-  <button className="btn btn-primary " onClick={handleVoCount}>VowelCount</button>
-  <button className="btn btn-primary mx-2 my-1" onClick={handleCoCount}>ConsonantCount</button>
-  <button className="btn btn-primary mx-2 my-1" onClick={handleSpace}>Remove Whitespaces</button>
+  <div disabled={text.length===0} className="container my-2">
+  <button disabled={text.length===0}  className="btn btn-primary " onClick={handleVoCount}>VowelCount</button>
+  <button disabled={text.length===0}  className="btn btn-primary mx-2 my-1" onClick={handleCoCount}>ConsonantCount</button>
+  <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleSpace}>Remove Whitespaces</button>
 
   </div>
   <div className="container my-2" style={{color:props.mode==="dark"?"white":"black"}}>

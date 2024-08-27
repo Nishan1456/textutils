@@ -67,7 +67,7 @@ function App() {
             document.body.style.background="#042743";
             setBtnText("Enabled Dark Mode");
             showAlert("DarkMode has been enabled","success");
-            document.title='TextUtils - DarkMode';
+            // document.title='TextUtils - DarkMode';
             
 
           }
@@ -77,7 +77,7 @@ function App() {
             document.body.style.background="white";
             setBtnText("Enabled Light Mode");
             showAlert("LightMode has been enabled","success");
-            document.title='TextUtils - LightMode';
+            // document.title='TextUtils - LightMode';
           
       
           }
@@ -96,7 +96,7 @@ function App() {
         
           <Route exact path="/">
           
-          <TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode} />
+          <TextForm showAlert={showAlert} heading="Try TextUtils - Word Counter, Character Counter " mode={mode} />
           </Route>
           </Switch>
 </div>
